@@ -1,0 +1,157 @@
+<!DOCTYPE html> 
+<HTML> 
+<HEAD> 
+<META charset="utf-8"> 
+<TITLE>Lesson_1_Task_3</TITLE> 
+</HEAD> 
+<BODY> 
+<img src="Multi/Logo.png" alt="Удалён" align="right">
+<H1> <STRONG> HOW-TO: Программа на Python, Часть 3 </STRONG> </H1> 
+<ul>
+    <li><a href="Lesson_2_Task_1.html"><CITE>Программа на Python — часть 1</CITE></a></li>
+    <li><a href="Lesson_2_Task_2.html"><CITE>Программа на Python — часть 2</CITE></a></li>
+    <li><a href="Lesson_2_Task_3.html"><CITE>Программа на Python — часть 3</CITE></a></li>
+</ul>
+<H2> <STRONG> Содержание </STRONG> </H2> 
+<H3> <STRONG> HOW-TO: Программа на Python, Часть 3 </STRONG> </H3> 
+<a name="start"></a>
+<ul>
+    <li><a href="#1">Модули</a></li>
+    <li><a href="#2">Функции</a></li>
+</ul>
+<hr>
+<p>
+    В прошлый раз мы изучали списки, подстановку переменных, комментарии, сравнение и <br>
+    присвоение, операторы <strong>if</strong> и <strong>while</strong>. Я обещал, что в этой части мы изучим модули и <br>
+    функции. Давайте начнём.
+</p>
+<a name="1"></a>
+<h2>Модули</h2>
+<a href="#start">К содержанию</a>
+<p>
+Модули предлагают способ расширить программирование на Python. Вы можете создать <br>
+свои модули, использовать те, которые поставляются с Python или которые написали <br>
+другие. В самом Python есть сотни модулей, которые облегчают написание программ. <br>
+Список модулей, поставляемых с Python, находится по адресу: <br>
+<a href="http://docs.python.org/modindex.html"><cite><font color="black">http://docs.python.org/modindex.html</font></cite></a>. Некоторые модули предназначены для определённых <br>
+операционных систем, но большинство из них кроссплатформенные и работают <br>
+одинаково на <a href="https://ru.wikipedia.org/wiki/Linux"><font color="black">Linux</font></a>, <a href="https://ru.wikipedia.org/wiki/MacOS"><font color="black">Mac</font></a> и <a href="https://ru.wikipedia.org/wiki/Windows"><font color="black">Microsoft Windows</font></a>. Для использования внешнего модуля <br>
+необходимо импортировать его в программу. Один из модулей, поставляемых с Python, <br>
+называется «random». Он даёт возможность генерировать псевдослучайные числа. Мы <br>
+используем этот модуль в нашем первом примере. <br>
+</p>
+<P><BR></P>
+<p>
+    <code>
+        #======================================= <br>
+        # random_example.py <br>
+        # Module example using the random module <br>
+        #======================================= <br>
+        import random <br>
+        # print 14 random integers <br>
+        for cntr in range(1,15): <br>
+        &nbsp&nbsp&nbsp&nbspprint random.randint(1,10) <br>
+    </code>
+</p>
+<p>
+    Давайте разберём код по строкам. Первые четыре строки — это комментарии, о которых <br>
+    мы говорили в прошлый раз. Пятая строка говорит Python, что нужно использовать <br>
+    модуль «random». Мы должны явно указать Python на это.
+</p>
+<hr>
+<a name="2"></a>
+<h2>Функции</h2>
+<a href="#start">К содержанию</a>
+<p>
+    Когда мы импортировали модуль random, мы использовали функцию <strong>randint()</strong>. Функция <br>
+    — это блок кода, который создан для того, чтобы вызывать его в программе, обычно, <br>
+    более одного раза. Это упрощает работу над программой и предотвращает набор одного и <br>
+    того же кода снова и снова. Грубо говоря, если вам нужно написать некоторый код <br>
+    больше, чем 1-2 раза, стоит сделать его функцией. Хотя следующие два примера очень <br>
+    простые, это хорошие примеры функций. Теперь мы хотим, скажем, взять два числа, <br>
+    сложить их, перемножить, вычесть одно из другого, затем вывести на экран эти числа и <br>
+    результаты одновременно. Допустим, нам нужно сделать это три раза для трёх наборов <br>
+    чисел. Тогда наш пример будет выглядеть как код ниже.
+</p>
+<p>
+    <code>
+        #silly example <br>
+        print '%d + %d = %d ' % (1,2,1+2) <br>
+        print '%d * %d = %d ' % (1,2,1*2) <br>
+        print '%d - %d = %d ' % (1,2,1-2) <br>
+        print '\n' <br>
+        print '%d + %d = %d ' % (1,4,1+4) <br>
+        print '%d * %d = %d ' % (1,4,1*4) <br>
+        print '%d - %d = %d ' % (1,4,1-4) <br>
+        print '\n' <br>
+        print '%d + %d = %d ' % (10,5,10+5) <br>
+        print '%d * %d = %d ' % (10,5,10*5) <br>
+        print '%d - %d = %d ' % (10,5,10-5) <br>
+        print '\n'
+    </code>
+</p>
+<p>
+    Здесь нужно не только набрать много текста, но и непременно возникнут ошибки как при <br>
+    написании, так и при внесении изменений. Вместо этого мы создадим функцию, которую <br>
+    назовём <strong><cite>«DoTwo»</cite></strong>. Она будет каждый раз брать два числа, проводить математические <br>
+    операции и выводить результат. Начнём с ключевого слова <strong><cite>«def»</cite></strong>, которое сигнализирует <br>
+    о том, что мы собираемся определить функцию. После слова <strong><cite>«def»</cite></strong> добавим название <br>
+    функции и список параметров, если таковые имеются, в круглых скобках. Эту строку <br>
+    необходимо завершить двоеточием. Код функции набирается с отступом. Наш <br>
+    улучшенный простой пример (<ins>№2</ins>) показан ниже.  
+</p>
+<P><BR></P>
+<p>
+    <code>
+        #silly example 2...still silly, but better <br>
+        def DoTwo(num1,num2): <br>
+        &nbsp&nbsp&nbsp&nbspprint '%d + %d = %d ' % (num1,num2,num1+num2) <br>
+        &nbsp&nbsp&nbsp&nbspprint '%d * %d = %d ' % (num1,num2,num1*num2) <br>
+        &nbsp&nbsp&nbsp&nbspprint '%d - %d = %d ' % (num1,num2,num1-num2) <br>
+        &nbsp&nbsp&nbsp&nbspprint '\n' <br>
+        DoTwo(1,2) <br>
+        DoTwo(1,4) <br>
+        DoTwo(10,5) <br>
+    </code>
+</p>
+<p>
+    Как видите, здесь написано меньше кода — 8 строк вместо 12. Если нам нужно будет что- <br>
+    либо поменять в функции, мы сможем сделать это, не создавая проблем для нашей <br>
+    программы. Чтобы вызвать функцию, нужно написать её имя и параметры. <br>
+</p>
+<table width="100%">
+    <tr>
+        <td align="left" valign="middle">
+            <a href="Lesson_2_Task_2.html">
+                <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Layer_1">
+                     <title>Layer 1</title>
+                     <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQiSURBVDhPfZTrUxNnFMb5g+iNyBTrVEAFO7ZT66WFTnX6oSKNwAhUCsolYiggJYKUQkG0Q4dMsQUBE0C8gAQMBkiyIVmScEsC5LKby+6GTTabZPftuxCG3p95P+zsOb/nPXvOmU0C/yaeB16CXdkKoTbaskljAZbj+ETsr/o7z7BxxZzvSttadoVRVGB4+2uTqAA5Uaa/3Gp5pMLoUDSRt68/8TyYQ8kvGteS883Hq5x5XWHZSGhQhXc9oYoeMB/Vbr95eSmzFBl46WIiBy77PM+rTdSJCmvata2mQdJgZ8kdhqIjRDAaicYikeiGO/zgGXWqxi4q0PcobGEmsscleDVKZlWYP5Y6hzW028e4fMyUnuwZc98fdz/XEXYP4/azHiKiRoNftdhFYu2IygVAPMFH2HhuPbzZ8XAmuL4dMtroUU1gUh/YdQazRnJiwY/ahfer26HnOurDmo1ztagvEIRlC7xCjSfnmyRy3+tlcsZIPZrxPtUG2BgntAQAm5tRGUnoAkOzJmrRSrYr8EOFS71P7HycTeJ5/spda8b1zf5pv1Lj+3USH9X4aUaoDYYwIvrSQI6o/YrXfsWc/3eV9/5T4s6wL+O648tGA0kGk7xE5GQ5kisj+yfdP0944PAIWoChtnDmt2n83qirZ1xoBGxH29DWJ03hY1Lu0I1Y5je65TVP0spmKLXIUNjl+0nhHH7l9VEHs9nEI1MI8cpE7R01Si1aCHEPlyYB70pAihiZ1dmTUNtOitgk7vQ29DtNtlAC/W8NLYBjdQIPV2tSsw7vp1MLDWeaQnk/+h/PJ6b6P+p+ATKk4LAEiMT66fn1JJyIZJcjadXR7PrYxfbYOJJoO5TOBpqVQKYELWPCaR0DTQpwthWkS0FqJZdevKhHHbD/nLjV8lYJntUIMqVcbhs3YYC8YLGOgdI+IKoEKTdAajU4XMMdkXAZdVx2I3in1HfxO2Tb5RLmPzTjSc5HT9+mc1pC55vpgu7QlJHdrQB4SP7WAHuqPnyuOfSpjP5MJuTAzDfEaMfg8k4wIPB0mL3QsJz+7WpJj/dqF17QiUn6fBpreM/isWYn7wfP1W5s9+AwJ7Ni7XQVYlm1sSyT2P9pxHey3JBTb62TO2/2uap7nd8PeJY2QjgRvTfmrex1SvqctXIXjH7esHK8DJGPmSnCD789wcdjsWeL2AflyNmbqFTubB3yQP7uMNb+GGse8MgG4bNHKnedr13OKtNC2O32QASCCR4qumuRc2vp/WLkksxyu9/RocQ6lXinEmt66Lh0x3q0xHCmCpGPml1uNxth9qgDfldxbyD4y7iw25ml2vcKFzOKtUeKFo6WaC9IDR0DZvOKnSL9sdg//x8H4rl4lCAodA1TaR0vNBuT8xs6k2PL5YbdjrIMz8EF2RcAfwAxACKzDuu40AAAAABJRU5ErkJggg==" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQiSURBVDhPfZTrUxNnFMb5g+iNyBTrVEAFO7ZT66WFTnX6oSKNwAhUCsolYiggJYKUQkG0Q4dMsQUBE0C8gAQMBkiyIVmScEsC5LKby+6GTTabZPftuxCG3p95P+zsOb/nPXvOmU0C/yaeB16CXdkKoTbaskljAZbj+ETsr/o7z7BxxZzvSttadoVRVGB4+2uTqAA5Uaa/3Gp5pMLoUDSRt68/8TyYQ8kvGteS883Hq5x5XWHZSGhQhXc9oYoeMB/Vbr95eSmzFBl46WIiBy77PM+rTdSJCmvata2mQdJgZ8kdhqIjRDAaicYikeiGO/zgGXWqxi4q0PcobGEmsscleDVKZlWYP5Y6hzW028e4fMyUnuwZc98fdz/XEXYP4/azHiKiRoNftdhFYu2IygVAPMFH2HhuPbzZ8XAmuL4dMtroUU1gUh/YdQazRnJiwY/ahfer26HnOurDmo1ztagvEIRlC7xCjSfnmyRy3+tlcsZIPZrxPtUG2BgntAQAm5tRGUnoAkOzJmrRSrYr8EOFS71P7HycTeJ5/spda8b1zf5pv1Lj+3USH9X4aUaoDYYwIvrSQI6o/YrXfsWc/3eV9/5T4s6wL+O648tGA0kGk7xE5GQ5kisj+yfdP0944PAIWoChtnDmt2n83qirZ1xoBGxH29DWJ03hY1Lu0I1Y5je65TVP0spmKLXIUNjl+0nhHH7l9VEHs9nEI1MI8cpE7R01Si1aCHEPlyYB70pAihiZ1dmTUNtOitgk7vQ29DtNtlAC/W8NLYBjdQIPV2tSsw7vp1MLDWeaQnk/+h/PJ6b6P+p+ATKk4LAEiMT66fn1JJyIZJcjadXR7PrYxfbYOJJoO5TOBpqVQKYELWPCaR0DTQpwthWkS0FqJZdevKhHHbD/nLjV8lYJntUIMqVcbhs3YYC8YLGOgdI+IKoEKTdAajU4XMMdkXAZdVx2I3in1HfxO2Tb5RLmPzTjSc5HT9+mc1pC55vpgu7QlJHdrQB4SP7WAHuqPnyuOfSpjP5MJuTAzDfEaMfg8k4wIPB0mL3QsJz+7WpJj/dqF17QiUn6fBpreM/isWYn7wfP1W5s9+AwJ7Ni7XQVYlm1sSyT2P9pxHey3JBTb62TO2/2uap7nd8PeJY2QjgRvTfmrex1SvqctXIXjH7esHK8DJGPmSnCD789wcdjsWeL2AflyNmbqFTubB3yQP7uMNb+GGse8MgG4bNHKnedr13OKtNC2O32QASCCR4qumuRc2vp/WLkksxyu9/RocQ6lXinEmt66Lh0x3q0xHCmCpGPml1uNxth9qgDfldxbyD4y7iw25ml2vcKFzOKtUeKFo6WaC9IDR0DZvOKnSL9sdg//x8H4rl4lCAodA1TaR0vNBuT8xs6k2PL5YbdjrIMz8EF2RcAfwAxACKzDuu40AAAAABJRU5ErkJggg==" id="svg_1" height="21" width="21" y="0" x="0"/>
+                    </g>
+                   </svg>
+            </a>
+        </td>
+        <td align="center" valign="middle">
+            <a href="#top">
+                <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Layer_1">
+                     <title>Layer 1</title>
+                     <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQtSURBVDhPbZT5UxNnHMbzr/Sn/kIPBR21FUGuXlOn1il0sONMS6UBbIFyWTEc4QhYEKzlqEcRDQMzocBgQEWuQEOJBDaQk4SEANkl526OzWaT7L59l8TSWp95552d9/l+3u++z7uzPPA6sSxw4vTmLqmxBPQ7AbuHZhg27v1Xr/IUHR1fchXcMmVWbSQWqo7w1UmFSHr52uUO/R8ye4AMx+te6l88C5Y0RK7IlJCvS6u2fdsbbB0hxdP27gnv979Tn9TtvX15PbUUkcyhVOhwl5c8y8rV3vQqw4my3dZhQmWh/SRl2A2MyV1wpqiwBQven/J+JNhOLFy7O24JUqEYF+flGiKjSvep0Da6HMBcFOqi5FrfqtEPrbUt/5LWZ3PRdjwk1/i+ubmdyFeOyVAAotDl+BAdzWmCna1DCz7THrlhIWcRXKH3HWTGDaXRP4sQ62a/0UY+X/V+LDB/XqdxeXzQ4vhxuSMhX10jdi1piYUN4umKZ0nrDYbg9rHM2WiUfWHwwXXorhiI2+OOpKL1B0+22SjNY1m2oNOQcnVncM4tVbjggRfVXpL6B46JDUdZhcEnkTnvPsXbR10pV62XRCqC8PGceCirEslpIwZnMJi2bJ0gAq9eUkx0mJEq8NxbobMNTNJPkdQfV7Wmfd7mDnnsiqqo19X72Cb9y+0PRuLlrxEboKIdEyC5HhwXgKN8ZHF1m6ex+I/y1fxuZ+OAbWTRbUYpzA37cy8PjxaOMhTNRrikgdkB5Jtsz3NwtgGcqAHvfqeeWd6C/QPHilTnb5Bf/+Ip6MEr+rwDsmCMR3H23hxTMcA+2+D4h4vgQgf4sAWcrgenakEif21escVz4KHMSuTk9XBWcyStIQxH82g8PK0NXOoGb/wAOic5HnZ+vxacrAEpQnD8GnOmeGVNY4X5M/wO/TsljkwRSGtk0psY0RiEOd6Agrw74M0y8Oszjr83y2Y0MqkNTJYIHCl1fdWI7KEod/8jC/sJ+ZpzLYHsm2ROe+D2JBXjjRhTKQ6l1ZH989yNDP5J53aSX7STsPItvqZrWOv3eTg+EKQvNmvPVBhL7jqLf7PXiJ19U/idJx6RxFl231HQZRcOOfum8cYh6DpgTWqV6Vw1ojdaaJqKf//ziCurUpXdZGgQ22ofoYJ+9PoD27U+m+ChraafmwWPULgO3S+bN9PKEfGEzou74dnjfDQSmVqxf1CJnK/VCMW2jpH9tuH9GxIMjp8lGHyGK0IxeqFOm1GuhDCG7UMEgnEeKnywRXb9+uliJK9N3zJo7ZHae6VOOLcOWfPaDcklqs+qEbFUh2IYHYIZcTrkDxR1enz9k9y3nVqqPFW0klKsfO/Ki+QS5UWhqkui021uewl3JPL//8ehWCYaxnGvxmSXKa3Ty+YZhXlVbd1FMZh2mKZYhokXQgHwN2nhI9KuOPQHAAAAAElFTkSuQmCC" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQtSURBVDhPbZT5UxNnHMbzr/Sn/kIPBR21FUGuXlOn1il0sONMS6UBbIFyWTEc4QhYEKzlqEcRDQMzocBgQEWuQEOJBDaQk4SEANkl526OzWaT7L59l8TSWp95552d9/l+3u++z7uzPPA6sSxw4vTmLqmxBPQ7AbuHZhg27v1Xr/IUHR1fchXcMmVWbSQWqo7w1UmFSHr52uUO/R8ye4AMx+te6l88C5Y0RK7IlJCvS6u2fdsbbB0hxdP27gnv979Tn9TtvX15PbUUkcyhVOhwl5c8y8rV3vQqw4my3dZhQmWh/SRl2A2MyV1wpqiwBQven/J+JNhOLFy7O24JUqEYF+flGiKjSvep0Da6HMBcFOqi5FrfqtEPrbUt/5LWZ3PRdjwk1/i+ubmdyFeOyVAAotDl+BAdzWmCna1DCz7THrlhIWcRXKH3HWTGDaXRP4sQ62a/0UY+X/V+LDB/XqdxeXzQ4vhxuSMhX10jdi1piYUN4umKZ0nrDYbg9rHM2WiUfWHwwXXorhiI2+OOpKL1B0+22SjNY1m2oNOQcnVncM4tVbjggRfVXpL6B46JDUdZhcEnkTnvPsXbR10pV62XRCqC8PGceCirEslpIwZnMJi2bJ0gAq9eUkx0mJEq8NxbobMNTNJPkdQfV7Wmfd7mDnnsiqqo19X72Cb9y+0PRuLlrxEboKIdEyC5HhwXgKN8ZHF1m6ex+I/y1fxuZ+OAbWTRbUYpzA37cy8PjxaOMhTNRrikgdkB5Jtsz3NwtgGcqAHvfqeeWd6C/QPHilTnb5Bf/+Ip6MEr+rwDsmCMR3H23hxTMcA+2+D4h4vgQgf4sAWcrgenakEif21escVz4KHMSuTk9XBWcyStIQxH82g8PK0NXOoGb/wAOic5HnZ+vxacrAEpQnD8GnOmeGVNY4X5M/wO/TsljkwRSGtk0psY0RiEOd6Agrw74M0y8Oszjr83y2Y0MqkNTJYIHCl1fdWI7KEod/8jC/sJ+ZpzLYHsm2ROe+D2JBXjjRhTKQ6l1ZH989yNDP5J53aSX7STsPItvqZrWOv3eTg+EKQvNmvPVBhL7jqLf7PXiJ19U/idJx6RxFl231HQZRcOOfum8cYh6DpgTWqV6Vw1ojdaaJqKf//ziCurUpXdZGgQ22ofoYJ+9PoD27U+m+ChraafmwWPULgO3S+bN9PKEfGEzou74dnjfDQSmVqxf1CJnK/VCMW2jpH9tuH9GxIMjp8lGHyGK0IxeqFOm1GuhDCG7UMEgnEeKnywRXb9+uliJK9N3zJo7ZHae6VOOLcOWfPaDcklqs+qEbFUh2IYHYIZcTrkDxR1enz9k9y3nVqqPFW0klKsfO/Ki+QS5UWhqkui021uewl3JPL//8ehWCYaxnGvxmSXKa3Ty+YZhXlVbd1FMZh2mKZYhokXQgHwN2nhI9KuOPQHAAAAAElFTkSuQmCC" id="svg_1" height="21" width="21" y="0" x="0"/>
+                    </g>
+                   </svg>
+            </a>
+        </td>
+        <td align="right" valign="middle">
+            <a href="#">
+                <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Layer_1">
+                     <title>Layer 1</title>
+                     <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQdSURBVDhPdVRdaxxVGD5n5szXzuzuzH4lm6S1SVq3RdOapF8pqLTU2CJUEFEUxKJ4IeKFf6D+gqIX3oh6IXpnLwTRlPpRa8GooZKtMcWQNN2k2Ww2OzP7MTszO3POHM+WlZRKH14Ow3nfZ97heZ93IKUU/A/szmwEtoNDTHkeGJqQSQocB3vp+/Ag3w/ID3/WZ+bqy2XPbEWE8DyPjRgdGVTOTBjTk4YaE3ql93Afn4LfbjU++qZWXA37sonhIWN/nu4x2qYrLZTF1XVzbcNKa9E753LPHc/IUu8t//EpnV1sXfiy4uDYC1Px6Ql5NEcFxPshJ4uARtGmjX9eCC9dt7dM++0z+qun84os7fBnFxvvf7GpqIk3ppNHR3kOwg6Gq1Vc2qYDBhzp51URAo7eLgefXbHml8wLr+TPPZkDgO/yOwE5f3HljiW/97wxOcz7mH0NDTFIqMJgRlgoBbVG2JeEogAkBEtV/MHXpsx7H7+7K21oHGv+/Q1roRQ+O67uTkeVOq63QruFMYl0FcoCPLxXSmlotUqqdcxCV+nZI1ppm3z7h0VJyLFWM3N2JpU4MAQsB5tNbLaI7ZAtO1wp+802YQ2OFKShjLhh0fVacLNEA8Jp8eRP842m00Fszitlrz/XB4h3t8ZzHGIEBiZLuR46nc7RR2VN4djJOl0pkrk7ihsKDkyubZvlmsvZLWK5MKPhhkuzhnJoVHt8WGUxNqKODWsJDQW4N+BjBeVYQeeQ5AQcL6CGy1lNH4UkIpjHhDoeeG1CVZjOD8f0If7aP6DWAhFlgYKQcAIPeZ5UWrHbllK2e3UPA46A0+k+sCY8DHkIkB5HhkorjuBT8cMZ+tgQCAlLQwqZl0FfApweAwNGl9NwwSdXwa0NgDjgdSJNIgkVIbYYo3n511I9rmb/vhstrHf9FAFWAVUZvP4UMNQuud0Bn/8SXZ4HTA1Z5Jp1u5BFWUNgTuOmJ3XibsdgO6f5Oc3r17xczC3kvDefJi8fB4oI2n50adafW/J0mWV9GbaxtzW1X0xqctc/z0waT+yBdXNzIO7mVbdfa+fV9t6Me/gRHBNBJ4wu33Dml5u61B6Ku6ymaVdG0uGpg4ooKV0+E/2tszkZuuWqldXClEpSKuZosLblWy18/S9nsdTWJJzVCMtWtm2OOC+dkPKZhCCIvf0hGF8tWhe/2owpwvg+PaHyTEUmr4BgEFI2LQGBZjsqLtcbjnf+ZOzUuJHNpHmEdvY/xPha0fr0u62yFRV2yfsGlYQmAzYGSFttf2nDX1r30yp9cUo6OaGnDV2UZMba4d8DqdnuzO/2j8X6WhV3AioiyAzGI253Cp04IJ48qAzk4jE1jtAD/48dUObHZssrm77Z8ENMIAR6jM+mRF2TJElBSIRcV7UuAPgX6Qcgl8JNO20AAAAASUVORK5CYII=" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQdSURBVDhPdVRdaxxVGD5n5szXzuzuzH4lm6S1SVq3RdOapF8pqLTU2CJUEFEUxKJ4IeKFf6D+gqIX3oh6IXpnLwTRlPpRa8GooZKtMcWQNN2k2Ww2OzP7MTszO3POHM+WlZRKH14Ow3nfZ97heZ93IKUU/A/szmwEtoNDTHkeGJqQSQocB3vp+/Ag3w/ID3/WZ+bqy2XPbEWE8DyPjRgdGVTOTBjTk4YaE3ql93Afn4LfbjU++qZWXA37sonhIWN/nu4x2qYrLZTF1XVzbcNKa9E753LPHc/IUu8t//EpnV1sXfiy4uDYC1Px6Ql5NEcFxPshJ4uARtGmjX9eCC9dt7dM++0z+qun84os7fBnFxvvf7GpqIk3ppNHR3kOwg6Gq1Vc2qYDBhzp51URAo7eLgefXbHml8wLr+TPPZkDgO/yOwE5f3HljiW/97wxOcz7mH0NDTFIqMJgRlgoBbVG2JeEogAkBEtV/MHXpsx7H7+7K21oHGv+/Q1roRQ+O67uTkeVOq63QruFMYl0FcoCPLxXSmlotUqqdcxCV+nZI1ppm3z7h0VJyLFWM3N2JpU4MAQsB5tNbLaI7ZAtO1wp+802YQ2OFKShjLhh0fVacLNEA8Jp8eRP842m00Fszitlrz/XB4h3t8ZzHGIEBiZLuR46nc7RR2VN4djJOl0pkrk7ihsKDkyubZvlmsvZLWK5MKPhhkuzhnJoVHt8WGUxNqKODWsJDQW4N+BjBeVYQeeQ5AQcL6CGy1lNH4UkIpjHhDoeeG1CVZjOD8f0If7aP6DWAhFlgYKQcAIPeZ5UWrHbllK2e3UPA46A0+k+sCY8DHkIkB5HhkorjuBT8cMZ+tgQCAlLQwqZl0FfApweAwNGl9NwwSdXwa0NgDjgdSJNIgkVIbYYo3n511I9rmb/vhstrHf9FAFWAVUZvP4UMNQuud0Bn/8SXZ4HTA1Z5Jp1u5BFWUNgTuOmJ3XibsdgO6f5Oc3r17xczC3kvDefJi8fB4oI2n50adafW/J0mWV9GbaxtzW1X0xqctc/z0waT+yBdXNzIO7mVbdfa+fV9t6Me/gRHBNBJ4wu33Dml5u61B6Ku6ymaVdG0uGpg4ooKV0+E/2tszkZuuWqldXClEpSKuZosLblWy18/S9nsdTWJJzVCMtWtm2OOC+dkPKZhCCIvf0hGF8tWhe/2owpwvg+PaHyTEUmr4BgEFI2LQGBZjsqLtcbjnf+ZOzUuJHNpHmEdvY/xPha0fr0u62yFRV2yfsGlYQmAzYGSFttf2nDX1r30yp9cUo6OaGnDV2UZMba4d8DqdnuzO/2j8X6WhV3AioiyAzGI253Cp04IJ48qAzk4jE1jtAD/48dUObHZssrm77Z8ENMIAR6jM+mRF2TJElBSIRcV7UuAPgX6Qcgl8JNO20AAAAASUVORK5CYII=" id="svg_1" height="21" width="21" y="0" x="0"/>
+                    </g>
+                   </svg>
+            </a>
+            </td>
+    </tr>    
+</table>
+</BODY>
+</HTML> 
