@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'Application/css/style.css' %}>
+</head>
+<body>
+    <div class="structure hf he">
+        <div class="he1 header_child_1">
+            <h1>This site will provide you with the data you need to budget your company's transport</h1>
+        </div>
+        <div class="he1 header_child_2">
+            <h1>
+                <a href='/posts/add'>
+                    <img src="{% static 'Application/img/Button_ADD.png' %}" alt="No Image">
+                </a>
+            </h1>
+        </div>
+    </div>
+    <div class="structure">
+        {% for post in posts %}                        
+            <div class="content">
+                <div class="child">
+                    <a href={% url 'post' post.id %}>
+                        <img src="{{ post.image.url }}" alt="No Image">
+                    </a>
+                </div>
+                <div class="child">
+                    <p>Car Brand: {{ post.vehicle }}</p>
+                    <p>Model: {{ post.vehicle_model }}</p>
+                    <p>Engine capacity: {{ post.engine_capacity }}</p>
+                    <p>Fuel system type: {{ post.fuel_system_type }}</p>
+                    <p>Transmission type:<br>{{ post.transmission_type }}</p>
+                </div>
+            </div>            
+        {% endfor %}
+    </div>
+    <div class="structure hf f">
+        <h1>Powered by Django</h1>
+    </div>
+</body>
+</html>

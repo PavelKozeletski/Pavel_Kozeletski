@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'Application/css/style.css' %}>
+</head>
+<body>
+    <div class="structure_post hf he">        
+        <div class="he1 header_child_2"">
+            <h1>
+                <a href='{% url 'posts' %}'>
+                    <img src="{% static 'Application/img/Button_Back.png' %}" alt="No Image">
+                </a>
+            </h1>
+        </div>
+        <div class="he1 header_child_1">
+            <h1>This page will provide you additional data for budgeting your company's transport</h1>
+        </div>
+    </div>
+    <div class="structure_post">                       
+            <div class="content">
+                <div class="child">
+                    <img src="{{ post.image.url }}" alt="No Image">
+                </div>
+                <div class="child">
+                    <p>Car Brand: {{ post.vehicle }}</p>
+                    <p>Model: {{ post.vehicle_model }}</p>
+                    <p>Engine capacity: {{ post.engine_capacity }}</p>
+                    <p>Transmission type:<br>{{ post.transmission_type }}</p>
+                </div>
+            </div>
+    <div>
+        <div>
+            <h1>Additional Data</h1>
+        </div>
+        <div class="content">
+                <div class="child">
+                    <p class="add">Fuel consumption requirements: {{ post.fuel_consumption_requirements }} liters</p>
+                    <p class="add">fuel cost without taxes {{ post.fuel_cost_without_taxes }} BYN for 1 liter</p>
+                    <p class="add">Market prise: {{ post.market_prise }} BYN for 1 piece</p>
+                    <p class="add add_bot">Avarege service maintenance: {{ post.avarege_to_prise }} BYN for every servise period</p>                    
+                </div>
+                <div class="child">
+                    <p class="add">Avarege battery prise: {{ post.avarege_battery_prise }} BYN for 1 piece</p>
+                    <p class="add">Avarege tire prise: {{ post.avarege_tires_prise }} BYN for 1 piece</p>
+                    <p class="add">Avarege maintenance prise: {{ post.avarege_maintenance_prise }} BYN for 1 kilometer</p>
+                    <p class="add add_bot">Amortization period: {{ post.amortization_period }} Years</p>
+                </div>
+        </div>
+        <div>
+            <h1>Additional submodel description:</h1>
+        </div>
+        <div>
+            <h1>{{ post.submodel_description }}</h1>
+        </div>
+    </div>
+    </div>
+    <div class="structure_post hf f">
+        <h1>Powered by Django</h1>
+    </div>
+</body>
+</html>

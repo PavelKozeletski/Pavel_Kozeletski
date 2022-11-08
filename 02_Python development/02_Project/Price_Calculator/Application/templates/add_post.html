@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'Application/css/style.css' %}>
+    <link rel="stylesheet" href={% static 'Application/css/style2.css' %}>
+</head>
+<body>
+    <div class="structure_post hf he">
+        <div class="he1 header_child_2"">
+            <a href='{% url 'posts' %}'>
+                <img src="{% static 'Application/img/Button_Back.png' %}" alt="No Image">    
+            </a>
+        </div>
+        <div class="he1 header_child_1">
+            <h1>This page will provide you an opportunity to add a new transport</h1>
+        </div>
+    </div>
+    <div class="structure_post for_forms">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ new_form.as_p }}
+            <div>
+                <button type="submit">
+                    <img src="{% static 'Application/img/Button_ADD.png' %}" alt="No Image">
+                </button>
+            </div>
+        </form>
+    </div>
+     <div class="structure_post hf f">
+        <h1>Powered by Django</h1>
+    </div>
+</body>
+</html>

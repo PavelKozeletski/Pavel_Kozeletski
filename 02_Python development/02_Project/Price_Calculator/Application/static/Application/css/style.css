@@ -1,0 +1,110 @@
+body{
+    background-image: linear-gradient( rgb(255, 255, 255), rgba(250, 250, 250, 0.15) ), url(../img/Background_paper.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.structure {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.structure_post {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.hf {
+    display: flex;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.20);
+    align-items: center;
+}
+
+.f {
+    justify-content: center;
+}
+
+.he{
+    justify-content: space-between; 
+}
+.he1{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.header_child_1{
+    width: 80%;
+}
+
+.header_child_2{
+    width: 20%;
+}    
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(165 162 163 / 21%);
+    border-radius: 30px;
+    margin: 20px 0px;
+}
+
+.child {
+    width: 50%;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+
+.add{
+    margin-top: 10px;
+}
+.add_bot{
+    margin-bottom: 10px;
+}
+
+.for_forms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: rgb(211 206 206 / 20%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+p{
+    margin: 0px;
+    font-family: 'Museo Sans Cyrl';
+    font-size: large;
+    font-weight: bold;
+}
+
+h1{
+    font-family: 'Museo Sans Cyrl';
+    font-size: x-large;
+    font-weight: bolder;    
+    text-align: -webkit-center;
+}
+
+button{
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    border: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: local('Museo Sans Cyrl 500'), local('MuseoSansCyrl-500'), url('Museosanscyrl500.woff2') format('woff2'), url('Museosanscyrl500.woff') format('woff'), url('Museosanscyrl500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
